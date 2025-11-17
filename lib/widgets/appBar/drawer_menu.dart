@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_portfolio/extensions.dart';
+import 'package:my_portfolio/widgets/appBar/my_app_bar.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+part 'drawer_menu.g.dart';
+
+class DrawerMenu extends ConsumerStatefulWidget {
+  const DrawerMenu({super.key});
+
+  @override
+  ConsumerState<DrawerMenu> createState() => _DrawerMenuState();
+}
+
+class _DrawerMenuState extends ConsumerState<DrawerMenu>
+    with SingleTickerProviderStateMixin {
+  late final _controller = AnimationController(
+    duration: const Duration(milliseconds: 200),
+    vsync: this,
+  );
+  late final _animation = Tween<Offset>(
+    begin: Offset(0, -1),
+    end: Offset.zero,
+  ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Widget build(BuildContext context) {
+    ref.listen(drawerMenuControllerProvider,(previous,next){
+if(next.value == true ){
+  _controller.forward();
+}else{
+  _controller.reverse();
+}
+    });
+    return ClipRRect(
+      child: SlideTransition(
+        position: _animation,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            boxShadow: [
+              BoxShadow(
+                color: context.colorScheme.surface.withOpacity(0.4),
+                blurRadius: 6,
+                spreadRadius: 3,
+              ),
+            ],
+          ),
+      
+          child: const SmallMenus(),
+        ),
+      ),
+    );
+  }
+}
+
+@riverpod
+class DrawerMenuController extends _$DrawerMenuController {
+
+  @override
+  FutureOr<bool> build() {
+    return false;
+  }
+
+  open(){
+    update((state) => true);
+  }
+
+  close(){
+    update((state) => false);
+  }
+}

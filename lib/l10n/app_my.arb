@@ -1,0 +1,22 @@
+{
+    "home": "အိမ်",
+    "courses": "သင်တန်းများ",
+    "blog": "ဘလော့ဂ်",
+    "aboutMe": "ကျွန်ုပ်အကြောင်း",
+    "cooperation" : "Cooperation",
+    "hhz" : "Hein Htet Zaw",
+    "mobileDeveloper" : "Mobile Application Developer",
+    "mobileDev" : "Passionate Flutter Developer dedicated to crafting seamless, high-performance mobile applications with clean code, beautiful UI, and smooth user experiences.",
+    "poweredByFlutter" : "Pwoered By Flutter",
+    "courseDesc" : "Learn Mobile App Development with me",
+    "experiences" : "Experiences",
+    "experiencesDesc" : "Here is my professional experience in mobile app development",
+    "feedBack" : "Feedbacks",
+    "feedBackDesc" : "Here are some of the feedbacks from my course participants",
+    "aboutTitle": "Hein Htet Zaw (Mobile App Developer | Flutter, Kotlin, Java)",
+    "aboutDesc": "I am an experienced Mobile Application Developer with a proven track record of building innovative and user-focused applications. My journey in mobile development began with Android (Java, Kotlin), where I developed a solid foundation in creating seamless and intuitive user experiences.\n\nAs my passion for technology grew, I ventured into the world of Flutter (Dart), harnessing its cross-platform capabilities to transform creative ideas into functional and visually appealing mobile apps.I specialize in advanced state management techniques using libraries such as BLoC, Riverpod, and GetX. Leveraging these tools, I’ve successfully delivered applications with efficient architecture and maintainable state management solutions.My pursuit of excellence continues as I embrace Swift for iOS and Kotlin for Android, broadening my horizons and deepening my technical skill set.\n\nI thrive on challenges and new opportunities that push me to innovate and grow. My goal is to bring my expertise and enthusiasm to Myanmar’s dynamic tech ecosystem. As I continue this journey of learning and exploration, I am eager to contribute to cutting-edge projects and collaborate with like-minded professionals who share my passion for creating impactful mobile experiences.",
+    "whoAmI" : "Who am I?",
+    "tech" : "Technologirs I have worked with",
+    "use" : "Flutter ▸ Dart ▸ Kotlin ▸ Java "
+
+}
