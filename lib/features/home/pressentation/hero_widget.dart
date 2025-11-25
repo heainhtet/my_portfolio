@@ -51,14 +51,15 @@ class _LargeHero extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(flex: 1, child: const HeroImage()),
-        Gap(Insets.xxxl),
         Expanded(
           flex: 2,
           child: Column(
             children: [HeroText(), Gap(Insets.xxl), LargeHeroButtons()],
           ),
         ),
+        Gap(Insets.xxl),
+        Expanded(flex: 1, child: const HeroImage()),
+        
       ],
     );
   }

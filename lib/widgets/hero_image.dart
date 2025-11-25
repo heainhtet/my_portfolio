@@ -9,7 +9,7 @@ class HeroImage extends StatelessWidget {
       aspectRatio: 0.65,
       child: ClipRRect(
         borderRadius: BorderRadius.all(Radius.circular(250)),
-        child: Image.asset('assets/images/me.jpeg', fit: BoxFit.cover),
+        child: Image.asset('assets/images/me.jpeg', fit: BoxFit.cover, opacity: AlwaysStoppedAnimation(0.5)),
       ),
     );
   }

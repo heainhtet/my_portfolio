@@ -1,9 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/extensions.dart';
 import 'package:my_portfolio/style/app_size.dart';
 import 'package:my_portfolio/widgets/appBar/my_app_bar.dart';
 import 'package:my_portfolio/widgets/powered_by_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/app_icon.dart';
 
@@ -55,11 +57,36 @@ class _FooterLinks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Uri gitUrl = Uri.parse('https://github.com/heainhtet');
+    final Uri linkedinUrl = Uri.parse(
+      'https://www.linkedin.com/in/heain-htet-zaw-abb6722a9/',
+    );
+
+    Future<void> launchGit() async {
+      final LaunchMode mode = kIsWeb
+          ? LaunchMode.platformDefault
+          : LaunchMode.externalApplication;
+
+      if (!await launchUrl(gitUrl, mode: mode)) {
+        throw 'Could not launch $gitUrl';
+      }
+    }
+
+    Future<void> launchLinkedin() async {
+      final LaunchMode mode = kIsWeb
+          ? LaunchMode.platformDefault
+          : LaunchMode.externalApplication;
+
+      if (!await launchUrl(linkedinUrl, mode: mode)) {
+        throw 'Could not launch $linkedinUrl';
+      }
+    }
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _FooterLinkItem(onPressed: () {}, icon: AppIcon.git),
-        _FooterLinkItem(onPressed: () {}, icon: AppIcon.linkedin),
+        _FooterLinkItem(onPressed: launchGit, icon: AppIcon.git),
+        _FooterLinkItem(onPressed: launchLinkedin, icon: AppIcon.linkedin),
         _FooterLinkItem(onPressed: () {}, icon: AppIcon.git),
         _FooterLinkItem(onPressed: () {}, icon: AppIcon.linkedin),
       ],

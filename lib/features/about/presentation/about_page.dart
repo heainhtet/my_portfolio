@@ -28,6 +28,8 @@ class AboutPage extends StatelessWidget {
       }
     }
 
+   
+
     return AppScaffold(
       slivers: [
         SliverToBoxAdapter(
@@ -227,12 +229,12 @@ class AboutPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                      Gap(60),
+                    Gap(60),
 
                     Center(
                       child: OutlinedButton(
                         onPressed: launchResume,
-                      
+
                         style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(
@@ -252,8 +254,7 @@ class AboutPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                                          Gap(60),
-
+                    Gap(60),
                   ],
                 ),
               ],
